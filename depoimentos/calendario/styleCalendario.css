@@ -1,164 +1,224 @@
-/* Fonte e base */
-body {
-    font-family: "fonte4";
-    background: #fab1da;
-    margin: 0;
-    padding: 0;
-    color: #4a2c2a;
-  }
-  
-  @font-face {
+/* ===== RESET ===== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== FONTE E BASE ===== */
+@font-face {
   font-family: "fonte4";
-  src: url("Fonte4-Regular.ttf") ;
+  src: url("Fonte4-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Conteúdo acima e abaixo */
-  #top-content, #bottom-content {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  #top-content h1 {
-    margin-bottom: 10px;
-    color: #d63384;
-    font-weight: 600;
-  }
-  
-  #bottom-content {
-    margin-top: 30px;
-    padding: 15px;
-    background: #fff0f6;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  /* Calendário */
-  .calendar-container {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header button {
-    background: #ff6fa1;
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  header button:disabled {
-    background: #f3b7cc;
-    cursor: not-allowed;
-  }
-  
-  header button:hover:enabled {
-    background: #d63384;
-  }
-  
-  .weekdays, .days-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .weekdays div {
-    font-weight: bold;
-    color: #d63384;
-  }
-  
-  .days-grid div {
-    margin: 5px;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #fff5f7;
-    transition: 0.2s;
-  }
-  
-  .days-grid div:hover {
-    background: #ffe0eb;
-  }
-  
-  /* Destaque dos dias com eventos */
-  .has-event {
-    background: #ffb3c6 !important;
-    font-weight: bold;
-    color: #4a2c2a;
-  }
-  
-  /* Modal */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 350px;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-  
-  #close-modal {
-    position: absolute;
-    top: 10px; right: 15px;
-    cursor: pointer;
-    font-size: 22px;
-    color: #d63384;
-  }
-  
-  #modal-img {
-    margin-top: 15px;
-    max-width: 100%;
-    border-radius: 10px;
+body {
+  font-family: "fonte4", sans-serif;
+  background: #fab1da;
+  color: #4a2c2a;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+/* ===== TOPO E RODAPÉ ===== */
+#top-content, 
+#bottom-content {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#top-content h1 {
+  margin-bottom: 10px;
+  color: #d63384;
+  font-weight: 600;
+}
+
+#bottom-content {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== CALENDÁRIO ===== */
+.calendar-container {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+header button {
+  background: #ff6fa1;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header button:disabled {
+  background: #f3b7cc;
+  cursor: not-allowed;
+}
+
+header button:hover:enabled {
+  background: #d63384;
+}
+
+.weekdays, 
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.weekdays div {
+  font-weight: bold;
+  color: #d63384;
+}
+
+.days-grid div {
+  margin: 4px;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff5f7;
+  transition: 0.2s;
+}
+
+.days-grid div:hover {
+  background: #ffe0eb;
+}
+
+.has-event {
+  background: #ffb3c6 !important;
+  font-weight: bold;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px; 
+  right: 15px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #d63384;
+}
+
+#modal-img {
+  margin-top: 15px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== BOTÃO PRÓXIMO ===== */
+.proximo {
+  margin: 60px auto 0 auto;
+  padding: 18px 40px;
+  background-color: #F465B6;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.proximo:hover{
+  transform: scale(1.05);
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* ===== IFRAME ===== */
+iframe{
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+/* =============================== */
+/* 📱 OTIMIZAÇÃO IPHONE 11 (414px) */
+/* =============================== */
+
+@media (max-width: 430px){
+
+  .container{
+    padding: 20px 15px;
   }
 
+  #top-content h1{
+    font-size: 1.6rem;
+  }
+
+  .calendar-container{
+    padding: 18px;
+  }
+
+  .days-grid div{
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  header button{
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .modal-content{
+    padding: 20px 15px;
+  }
 
   a{
-    color: white;
-    text-decoration: none;
-    font-size: 350%;
-    margin-left: 10%;
-}
+    font-size: 1.4rem;
+  }
 
-.proximo {
-  margin-top: 10%;
-  height: 75px;
-  width: 23%;
-  background-color: #F465B6;
-  align-content: center;
-  border-radius: 15px;
-  margin-left: 40%;
-}
-
-iframe{
-  margin-left: 12.5%;
-  margin-top: 5% ;
+  .proximo{
+    width: 80%;
+    padding: 16px 0;
+  }
 }

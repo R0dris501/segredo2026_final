@@ -1,3 +1,4 @@
+/* ===== FONTE ===== */
 @font-face {
   font-family: "fonte3";
   src: url("Fonte3-Regular.ttf");
@@ -5,61 +6,68 @@
   font-style: normal;
 }
 
-body {
+/* ===== BASE ===== */
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background: #FAB1DA;
-  font-family: "fonte3";
+  font-family: "fonte3", sans-serif;
   color: #222;
 }
 
+/* ===== CONTAINER ===== */
 .depoimentos {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .depoimentos h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 2px;
 }
 
+/* ===== GRID ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
 }
 
+/* ===== CARD ===== */
 .card {
   background: #FF78C4;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  padding: 1.5rem 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
 .card img {
-  width: 100%;
-  max-width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
 .card h3 {
-  font-size: 1.1rem;
-  margin: 0;
+  font-size: 1.2rem;
 }
 
-/* ===== Modal ===== */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
@@ -68,15 +76,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 100;
+  padding: 1rem;
 }
 
 .modal-content {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 14px;
   padding: 2rem 1.5rem;
   text-align: center;
-  max-width: 400px;
-  width: 90%;
+  max-width: 420px;
+  width: 100%;
   position: relative;
   animation: fadeIn 0.3s ease;
 }
@@ -96,9 +105,33 @@ body {
 .modal-content p {
   font-size: 1rem;
   color: #444;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* ===== BOTÃO PRÓXIMO ===== */
+.proximo {
+  background-color: #F465B6;
+  border-radius: 18px;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto 5rem auto;
+  transition: 0.3s ease;
+}
+
+.proximo:hover{
+  transform: scale(1.05);
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* ===== FECHAR MODAL ===== */
 .close {
   position: absolute;
   top: 8px;
@@ -113,35 +146,51 @@ body {
   color: #000;
 }
 
-a{
-  color: white;
-  text-decoration: none;
-  font-size: 350%;
-  margin-left: 10%;
-}
-
-.proximo {
-height: 75px;
-width: 11%;
-background-color: #F465B6;
-align-content: center;
-border-radius: 15px;
-margin-left: 45%;
-margin-bottom: 5%;
-}
-
+/* ===== ANIMAÇÃO ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Responsivo ===== */
-@media (max-width: 600px) {
-  .depoimentos   {
+/* ========================== */
+/* 📱 IPHONE 11 OTIMIZAÇÃO */
+/* ========================== */
+
+@media (max-width: 430px){
+
+  .depoimentos {
+    padding: 2.5rem 1rem;
+  }
+
+  .depoimentos h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem 1rem;
+  }
+
+  a{
     font-size: 1.5rem;
   }
-  .card img {
-    max-width: 120px;
-    height: 120px;
+
+  .proximo{
+    width: 75%;
+    padding: 16px 0;
   }
 }
