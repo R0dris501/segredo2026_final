@@ -1,0 +1,42 @@
+body{
+    background-color: #FAB1DA;
+    font-family: "fonte2";
+}
+
+@font-face {
+  font-family: "fonte2";
+  src: url("Fonte2-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1{
+    text-align: center;
+    font-size: 600%;
+    margin-bottom: 0;
+    margin-top: 13%;
+}
+
+h3{
+    margin-top: 0;
+    text-align: center;
+    font-size: 200%;
+    margin-bottom: 10%;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 350%;
+    margin-left: 10%;
+    font-family: "fonte2";
+}
+
+.inicio {
+    height: 75px;
+    width: 9%;
+    background-color: #F465B6;
+    align-content: center;
+    border-radius: 15px;
+    margin-left: 45%;
+}

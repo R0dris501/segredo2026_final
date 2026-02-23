@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "fonte3";
+  src: url("Fonte3-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background: #FAB1DA;
+  font-family: "fonte3";
+  color: #222;
+}
+
+.depoimentos {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.depoimentos h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #FF78C4;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.modal-content h2 {
+  margin: 0.5rem 0;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close:hover {
+  color: #000;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 350%;
+  margin-left: 10%;
+}
+
+.proximo {
+height: 75px;
+width: 11%;
+background-color: #F465B6;
+align-content: center;
+border-radius: 15px;
+margin-left: 45%;
+margin-bottom: 5%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
+  .depoimentos   {
+    font-size: 1.5rem;
+  }
+  .card img {
+    max-width: 120px;
+    height: 120px;
+  }
+}
