@@ -1,19 +1,34 @@
 const slides = document.querySelector('.slides');
-const slideElements = document.querySelectorAll('.slide');
 const carousel = document.querySelector('.carousel');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let index = 0;
+
+/* 🔀 FUNÇÃO PARA EMBARALHAR (Algoritmo Fisher-Yates) */
+function shuffleSlides() {
+  const slideArray = Array.from(document.querySelectorAll('.slide'));
+
+  for (let i = slideArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [slideArray[i], slideArray[j]] = [slideArray[j], slideArray[i]];
+  }
+
+  // Reinsere na ordem embaralhada
+  slideArray.forEach(slide => slides.appendChild(slide));
+}
+
+/* 🔥 Executa o shuffle antes de tudo */
+shuffleSlides();
+
+const slideElements = document.querySelectorAll('.slide');
 const totalSlides = slideElements.length;
 
 function updateCarousel() {
   const slideWidth = carousel.clientWidth;
 
-  // Move exatamente 1 frame por vez (em pixels)
   slides.style.transform = `translateX(-${index * slideWidth}px)`;
 
-  // Ajusta altura dinamicamente
   const currentImg = slideElements[index].querySelector('img');
 
   if (currentImg.complete) {
