@@ -27,11 +27,18 @@ body {
 
 /* ===== CADA SLIDE ===== */
 .slide {
-  flex: 0 0 100%; /* ocupa exatamente 100% do carrossel */
+  flex: 0 0 100%;
 }
 
 /* ===== IMAGENS ===== */
 .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== VÍDEO (CORREÇÃO DA BORDA BRANCA) ===== */
+.slide video {
   width: 100%;
   height: auto;
   display: block;
@@ -50,7 +57,7 @@ body {
 }
 
 .nav button {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -61,7 +68,7 @@ body {
 }
 
 .nav button:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* ===== DOTS ===== */
