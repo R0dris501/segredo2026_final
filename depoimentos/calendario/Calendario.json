@@ -1,4 +1,8 @@
 {
+    "2025/01/20": { 
+        "texto": "É uma data que me lembra a Carol (Wanilla)", 
+        "imagem": "" 
+    },    
     "2025/10/12": { 
         "texto": "17h49; \n 17h52; \n 18h39; \n 18h48;", 
         "imagem": "" 
@@ -25,6 +29,18 @@
     },
     "2025/07/21": { 
         "texto": "Uma vez estávamos andando pela Paulista e a Aninha parou num sebo de rua pra olhar os livros, e ficou procurando os que tinham dedicatórias. Fiquei pensando que é assim que gostaria de eternizar nossa amizade, que alguém nos encontre um dia nos textos das páginas dos livros que nos dermos. (Sarah)", 
+        "imagem": "" 
+    },
+    "2025/11/23": { 
+        "texto": "Uma data que a gente saiu e foi muito bom (Wanilla)", 
+        "imagem": "" 
+    },
+    "2025/03/08": { 
+        "texto": "Um dos, se não o melhor dia de 2026, o aniversário da Carol, um dia tranquio, em que celebrar a vida era prioridade (João)", 
+        "imagem": "" 
+    },
+    "2025/08/28": { 
+        "texto": "O dia do vocacional, dia que eles mostraram como podemos organizar uma equipe de adolescentes chatos , imagina com criaanças pequenas (João)", 
         "imagem": "" 
     }
 }

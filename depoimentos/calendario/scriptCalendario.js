@@ -1,5 +1,5 @@
 let currentYear = 2025;
-let currentMonth = 5; // Junho = índice 5 (0 = Janeiro)
+let currentMonth = 0; // Junho = índice 5 (0 = Janeiro)
 
 // Limites do calendário
 const startYear = 2025;
