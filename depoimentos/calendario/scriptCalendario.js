@@ -4,8 +4,8 @@ let currentMonth = 0; // Junho = índice 5 (0 = Janeiro)
 // Limites do calendário
 const startYear = 2025;
 const startMonth = 0; // Junho/2025
-const endYear = 2026;
-const endMonth = 2; // Dezembro/2026
+const endYear = 2025;
+const endMonth = 11; // Dezembro/2026
 
 const monthYearElement = document.getElementById("month-year");
 const daysElement = document.getElementById("days");
